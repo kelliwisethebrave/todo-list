@@ -1,14 +1,16 @@
 import TodoListItem from './TodoListItem';
 
-function TodoList() {
-  const todos = [
+function TodoList({ todoList }) {
+  {
+    /*const todos = [
     { id: 1, title: 'review resources' },
     { id: 2, title: 'take notes' },
     { id: 3, title: 'code out app' },
-  ];
+  ];*/
+  }
   return (
     <ul>
-      {todos.map((todo) => (
+      {todoList.map((todo) => (
         <TodoListItem key={todo.id} todo={todo} />
       ))}
       {/* the below is the original arrow function before being 
