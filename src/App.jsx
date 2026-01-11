@@ -11,9 +11,30 @@ function App() {
       //can be just title since they have the same name
       title: title,
       id: Date.now(),
+      isCompleted: false,
     };
 
     setTodoList([...todoList, newTodo]);
+  }
+
+  function completeTodo(id) {
+    //takes an id
+    //maps through todoList
+    const updatedTodos = todoList.map((todo) => {
+      if (todo.id === id) {
+        return { ...todo, isCompleted: true };
+      } else {
+        return todo;
+      }
+    });
+
+    //if the current todo.id matches the id, return a new object that
+    //  destructures the current todo and isCompleted is set to true
+    //otherwise (if todo.id does not match the id) return the todo
+    //saves the resulting array to a const updatedTodos
+    //update the todoList with updatedTodos
+
+    setTodoList(updatedTodos);
   }
 
   return (
@@ -21,7 +42,7 @@ function App() {
       <h1>My ToDos</h1>
       <TodoForm onAddTodo={addTodo} />
       {/*<p>{newTodo}</p> step one, to remove this*/}
-      <TodoList todoList={todoList} />
+      <TodoList todoList={todoList} onCompleteTodo={completeTodo} />
     </div>
   );
 }
