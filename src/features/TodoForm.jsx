@@ -26,7 +26,7 @@ function TodoForm({ onAddTodo }) {
         value={workingTodoTitle}
         onChange={(event) => setWorkingTodo(event.target.value)}
         elementId="todoTitle"
-        labelText="Todo"
+        label="Todo"
       />
       {/*<label htmlFor="todoTitle">Todo</label>
       <input

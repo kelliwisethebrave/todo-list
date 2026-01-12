@@ -37,7 +37,12 @@ function TodoListItem({ todo, onCompleteTodo, onUpdateTodo }) {
         {isEditing ? (
           //yes for ternary statement
           <>
-            <TextInputWithLabel value={workingTitle} onChange={handleEdit} />
+            <TextInputWithLabel
+              elementId={todo.id}
+              label="Edit Todo"
+              value={workingTitle}
+              onChange={handleEdit}
+            />
             <button type="button" onClick={handleCancel}>
               Cancel
             </button>
